@@ -4,8 +4,11 @@ import java.util.Scanner;
 
 public class Сalculator {
 
+    public Double qwe = 0.00;
+
     public static void main(String[] args) {
 
+        double answer;
 
         //Узнаем оператор
 
@@ -20,6 +23,7 @@ public class Сalculator {
 
 
 
+
         //Запрашиваем нужные операнды
 
         if (operator.equals("+")) {
@@ -29,6 +33,10 @@ public class Сalculator {
 
             sum.getOperandHelper();
 
+            answer = sum.firstOperand + sum.secondOperand;
+            System.out.println(sum.firstOperand + " + " + sum.secondOperand + " = " + answer);
+
+
 
         } else if (operator.equals("-")){
             Opepator diff = new Opepator();
@@ -37,6 +45,11 @@ public class Сalculator {
 
             diff.getOperandHelper();
 
+            answer = diff.firstOperand - diff.secondOperand;
+            System.out.println(diff.firstOperand + " - " + diff.secondOperand + " = " + answer);
+
+
+
         } else if (operator.equals("*")){
             Opepator product = new Opepator();   /* product - произведение чисел */
             product.nameFirstOperand = "первый множитель";
@@ -44,21 +57,28 @@ public class Сalculator {
 
             product.getOperandHelper();
 
+            answer = product.firstOperand * product.secondOperand;
+            System.out.println(product.firstOperand + " * " + product.secondOperand + " = " + answer);
+
         } else if (operator.equals("^")){
             Opepator deg = new Opepator();
             deg.nameFirstOperand = "основание степени";
             deg.nameSecondOperand = "показатель степени";
 
             deg.getOperandHelper();
+            System.out.println(deg.firstOperand + " ^ " + deg.secondOperand + " = (не успела разобраться как считать)");
+
 
         } else if (operator.equals("!")){
             System.out.print("Введите множитель факториала: ");
             double firstOperand = in.nextDouble();            //Возможно нужно поменять переменную
             System.out.println();
+            System.out.println("!" + firstOperand +  " = (не успела разобраться как считать)");
+
 
         } else {
             System.out.println("Введенное значение не равно ни одному из перечисленных +, -, *, ^, !. " +
-                "\n Начните программу заново.");
+                "\nНачните программу заново.");
         }
 
 
@@ -77,24 +97,34 @@ public class Сalculator {
     }
 
 
-class Opepator {
+  class Opepator {
     String nameFirstOperand;
     String nameSecondOperand;
+    double firstOperand;
+    double secondOperand;
 
-    void getOperandHelper() {
+     void getOperandHelper() {
 
         Scanner in = new Scanner(System.in);
         System.out.print("Введите " + nameFirstOperand + ": ");
-        double firstOperand = in.nextDouble();
+        firstOperand = in.nextDouble();
         System.out.println();
 
 
         System.out.print("Введите " + nameSecondOperand + ": ");
-        double secondOperand = in.nextDouble();
+        secondOperand = in.nextDouble();
         System.out.println();
 
+
     }
+
+
+
+
+
+
 }
 
 
  //      in.close();    --так и не поняла куда ее запихнуть :(
+
