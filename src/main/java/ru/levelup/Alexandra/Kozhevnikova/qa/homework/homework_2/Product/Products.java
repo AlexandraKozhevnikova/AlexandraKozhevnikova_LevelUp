@@ -1,10 +1,27 @@
 package ru.levelup.Alexandra.Kozhevnikova.qa.homework.homework_2.Product;
 
-public class Products {
+public  abstract class Products {
+    private String name;
     private Origin origin;
     private int shellLife;  //in days in fridge
     private int amountC;    //amount of vitamin C, milligram. Содержание витамина С в 100гр продукта
+    private int caloric;   //в 100 г продукта
 
+    public int getCaloric() {
+        return caloric;
+    }
+
+    public void setCaloric(int caloric) {
+        this.caloric = caloric;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
 
     public int getAmountC() {
         return amountC;

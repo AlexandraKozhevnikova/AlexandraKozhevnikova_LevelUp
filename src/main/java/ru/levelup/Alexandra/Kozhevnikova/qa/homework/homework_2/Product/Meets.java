@@ -1,8 +1,6 @@
 package ru.levelup.Alexandra.Kozhevnikova.qa.homework.homework_2.Product;
 
-
-public class Vegetables extends Products {
-
+public class Meets extends Products {
 
 
 }
