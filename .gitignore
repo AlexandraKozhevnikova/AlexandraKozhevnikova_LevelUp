@@ -1,3 +1,5 @@
-# TODO не хватает папки target
+# TODO не хватает папки target +
 *.iml
 **/.idea
+**/target
+**/allure-results
