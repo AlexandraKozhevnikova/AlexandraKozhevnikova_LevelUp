@@ -2,6 +2,8 @@ package ru.levelup.Alexandra.Kozhevnikova.qa.homework.homework_2.Dish;
 
 import ru.levelup.Alexandra.Kozhevnikova.qa.homework.homework_2.Product.Products;
 import ru.levelup.Alexandra.Kozhevnikova.qa.homework.homework_2.Product.Vegetables;
+
+import java.util.Collections;
 import java.util.List;
 
 
@@ -42,6 +44,10 @@ public class Ingredients implements Cook{
 
         return c;
     };
+
+
+
+
 
 
 

@@ -5,8 +5,7 @@ import ru.levelup.Alexandra.Kozhevnikova.qa.homework.homework_2.Product.Meets;
 import ru.levelup.Alexandra.Kozhevnikova.qa.homework.homework_2.Product.Origin;
 import ru.levelup.Alexandra.Kozhevnikova.qa.homework.homework_2.Product.Vegetables;
 
-import java.util.ArrayList;
-import java.util.List;
+import java.util.*;
 
 public class Dinner {
 
@@ -78,6 +77,15 @@ public class Dinner {
         caloricDish = caloricDish + Ingredients.caloric(borcsh.get(i));
 
         System.out.println(caloricDish);
+        System.out.println();
+
+
+        Collections.sort(borcsh, new Comparator<Ingredients>() {
+            public int compare(Ingredients o1, Ingredients o2) {
+                return 0;
+            }
+        });
+
 
 
     }
