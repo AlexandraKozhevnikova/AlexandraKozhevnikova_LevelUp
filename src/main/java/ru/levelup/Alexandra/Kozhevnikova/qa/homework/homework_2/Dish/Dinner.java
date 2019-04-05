@@ -56,9 +56,7 @@ public class Dinner {
         cabbage.setAmount(60);
 
 
-
-
-       List<Ingredients> borcsh = new ArrayList<Ingredients>();
+        List<Ingredients> borcsh = new ArrayList<Ingredients>();
 
         borcsh.add(potato);
         borcsh.add(beet);
@@ -68,27 +66,22 @@ public class Dinner {
 
         System.out.println("Соcтав борща: ");
         for (int i = 0; i < borcsh.size(); i++)
-        System.out.println(Ingredients.printContents(borcsh.get(i)));
+            System.out.println(Ingredients.printContents(borcsh.get(i)));
         System.out.println();
 
         System.out.println("Калорийность борща: ");
         int caloricDish = 0;
         for (int i = 0; i < borcsh.size(); i++)
-        caloricDish = caloricDish + Ingredients.caloric(borcsh.get(i));
+            caloricDish = caloricDish + Ingredients.caloric(borcsh.get(i));
 
         System.out.println(caloricDish);
         System.out.println();
-
-
-        Collections.sort(borcsh, new Comparator<Ingredients>() {
-            public int compare(Ingredients o1, Ingredients o2) {
-                return 0;
-            }
-        });
-
-
-
     }
+
+
+
+
+
 
 
 
