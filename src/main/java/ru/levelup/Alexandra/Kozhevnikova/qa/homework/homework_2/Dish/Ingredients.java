@@ -1,5 +1,6 @@
 package ru.levelup.Alexandra.Kozhevnikova.qa.homework.homework_2.Dish;
 
+// TODO Не используемые импорты
 import ru.levelup.Alexandra.Kozhevnikova.qa.homework.homework_2.Product.Products;
 import ru.levelup.Alexandra.Kozhevnikova.qa.homework.homework_2.Product.Vegetables;
 
@@ -7,6 +8,7 @@ import java.util.Collections;
 import java.util.List;
 
 
+// TODO Как правило именна классов носят единственное число
 public class Ingredients implements Cook{
     private Products product;
     private int amount;     // gram for one portion
@@ -43,7 +45,8 @@ public class Ingredients implements Cook{
         int c = ingredients.amount * ingredients.product.getAmountC()/100;
 
         return c;
-    };
+
+    }; // TODO А зачем тут ;????
 
 
 
