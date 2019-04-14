@@ -17,9 +17,9 @@ import java.util.concurrent.TimeUnit;
 import static org.hamcrest.Matchers.*;
 import static org.junit.Assert.*;
 
+// TODO Формаирование (CTRL + ALT + L)
 public class MantisBT {
     private WebDriver driver;
-
 
 
 @Before
@@ -37,8 +37,10 @@ public void openLogin() {
     driver.findElement(By.xpath("//input[@type='submit']")).click();
     //    Assert User name in the right-top side of screen that user is loggined
     String userName = driver.findElement(By.className("user-info")).getText();
+    // TODO Нужно поменять местами "admin" и userName
     assertThat("admin", equalTo(userName));
     //    Assert left side menu
+    // TODO Было бы достаточно просто By.className
     List<WebElement> navlist = driver.findElements(By.xpath("//ul[contains(@class, 'nav-list')]//li"));
     List<String> expectedNavList = Arrays.asList(new String[]{"My View",
             "View Issues", "Report Issue", "Change Log",
@@ -49,6 +51,7 @@ public void openLogin() {
     }
     assertThat(actualNavList, containsInAnyOrder(expectedNavList.toArray(new String[expectedNavList.size()])));
     //    Click "Manage" button at the left side menu
+    // TODO Не понятный локатор. Не понятно что именно за 7-ой элемент
     driver.findElement(By.xpath("//ul[contains(@class, 'nav-list')]//li[7]")).click();
 }
 
@@ -56,6 +59,7 @@ public void openLogin() {
 @After
 public void closeDriver() {
     driver.findElement(By.className("user-info")).click();
+    // TODO локтор может быть улучшен
     driver.findElement(By.xpath("//i[contains(@class, 'fa-sign-out')]/..")).click();
     driver.quit();
 }
@@ -65,6 +69,7 @@ public void closeDriver() {
 @Test
 public void addProject() {
     //Click "Manage Projects" button at the top menuon the "Manage MantisBT" page
+    // TODO не понятный локатор
     driver.findElement(By.cssSelector("div.row li:nth-child(3)")).click();
     assertThat(driver.getTitle(), equalTo("Manage Projects - MantisBT"));
     //Click "Create New Projects" button
@@ -97,6 +102,7 @@ public void addProject() {
 @Test
     public void addUser() {
     //Click "Manage Users" button at the top menuon the "Manage MantisBT" page
+    // TODO Не понятный локатор
     driver.findElement(By.cssSelector("div.row li:nth-child(2)")).click();
     //Click "Create New Account" button
     driver.findElement(By.cssSelector(".pull-left > a")).click();
@@ -122,10 +128,12 @@ public void addProject() {
     driver.findElement(By.xpath("//input[@value='Create User']")).click();
 
     driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
+    // TODO не явный локатор
     driver.findElement(By.cssSelector("div.row li:nth-child(2)")).click();
 
     //    Logout
     driver.findElement(By.className("user-info")).click();
+    // TODO локатор может быть упрощен
     driver.findElement(By.xpath("//i[contains(@class, 'fa-sign-out')]/..")).click();
     //    Login under created user
     driver.findElement(By.id("username")).sendKeys(username);
@@ -139,6 +147,7 @@ public void addProject() {
 
     //    Logout
     driver.findElement(By.className("user-info")).click();
+    // TODO локатор может быть упрощен
     driver.findElement(By.xpath("//i[contains(@class, 'fa-sign-out')]/..")).click();
 
     //    Admin login
