@@ -1,4 +1,4 @@
-<!DOCTYPE suite SYSTEM http:// >
+<!DOCTYPE suite >
         <suite name="CalculatorMultDiv">
             <test name="CalculatorMult">
                 <classes>
@@ -7,3 +7,6 @@
                 </classes>
              </test>
         </suite>
+
+
+

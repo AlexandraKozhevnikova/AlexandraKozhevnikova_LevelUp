@@ -5,6 +5,7 @@ import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
 import org.openqa.selenium.By;
+import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
@@ -34,6 +35,7 @@ public void openLogin() {
     driver.findElement(By.id("username")).sendKeys("admin");
     driver.findElement(By.xpath("//input[@type='submit']")).click();
     driver.findElement(By.id("password")).sendKeys("admin");
+
     driver.findElement(By.xpath("//input[@type='submit']")).click();
     //    Assert User name in the right-top side of screen that user is loggined
     String userName = driver.findElement(By.className("user-info")).getText();
