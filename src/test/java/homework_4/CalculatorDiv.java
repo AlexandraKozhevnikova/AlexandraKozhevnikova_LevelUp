@@ -7,6 +7,7 @@ import ru.levelup.qa.at.calculator.Calculator;
 
 import static org.testng.Assert.assertEquals;
 
+// TODO класс Calculator не находится
 public class CalculatorDiv {
 
     Calculator calculator;

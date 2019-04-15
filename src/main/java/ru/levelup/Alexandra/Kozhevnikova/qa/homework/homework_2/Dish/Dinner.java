@@ -7,10 +7,23 @@ import ru.levelup.Alexandra.Kozhevnikova.qa.homework.homework_2.Product.Vegetabl
 
 import java.util.*;
 
+/* TODO
+        стартовым для решения вашей задачи. Пример:
+        public class ApplicationName {
+            public static void main(String[] args) {
+                ApplicationName app = new ApplicationName();
+                app.startApplication();
+            }
+            public void startApplication() {
+                //далее выполняется приложение
+            }
+        }
+ */
 public class Dinner {
 
 
     public static void main(String[] args) {
+        // TODO ДЛя создания объектов мог быть использован конструктор с параметрами
         Vegetables potatos = new Vegetables();
         potatos.setName("Картофель");
         potatos.setOrigin(Origin.Plant);
@@ -72,6 +85,7 @@ public class Dinner {
         System.out.println("Калорийность борща: ");
         int caloricDish = 0;
         for (int i = 0; i < borcsh.size(); i++)
+            // TODO Можно упростить
             caloricDish = caloricDish + Ingredients.caloric(borcsh.get(i));
 
         System.out.println(caloricDish);
