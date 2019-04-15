@@ -52,12 +52,18 @@ public class ActivitySteps {
         manageProjectPage.clickCreateProjectButton();
     }
 
-    @Step("Заполнить поля проекта")
+    @Step("Создать проект '{0}'")
     public void fillProjectInformation(String projectName, String projectDescription) {
         manageProjectPage.fillName(projectName);
         manageProjectPage.changeCheckboxIHC();
         manageProjectPage.fillDescription(projectDescription);
         manageProjectPage.clickAddProjectButton();
+    }
+
+    @Step("Удалить проект KAS")
+    public void deleteProject() {
+        manageProjectPage.openProject();
+        manageProjectPage.deleteProject();
     }
 
 

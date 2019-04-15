@@ -25,7 +25,6 @@ public class MantisBTPO {
 
         WebDriver driver;
 
-
         WebDriverManager.chromedriver().setup();
         driver = new ChromeDriver();
         activitySteps = new ActivitySteps(driver);
@@ -42,13 +41,9 @@ public class MantisBTPO {
         clickItemNavTabss(ItemsNavTabs.MANAGE_PROJECTS);
         activitySteps.clickCreateProjectButtons();
         activitySteps.fillProjectInformation("KAS", "create new project");
-
-
-
+        activitySteps.deleteProject();
 
     }
-
-
 
 
 }

@@ -23,8 +23,11 @@ public class ManageProjectPage extends CommonInPage {
     private WebElement buttonAddProject;
 
 
-//    @FindBy()
-//    private WebElement ;
+    @FindBy(xpath = "//td//a[contains(text(), 'KAS')]")
+    private WebElement stringProject;
+
+    @FindBy(xpath = "//input[@value='Delete Project']")
+    private WebElement buttonDeleteProject;
 
 
 
@@ -52,6 +55,19 @@ public class ManageProjectPage extends CommonInPage {
 
     public void clickAddProjectButton() {
         buttonAddProject.click();
+        addTimeout(10);
     }
+
+    public void openProject() {
+        stringProject.click(); //  можно сдулать удаление проекта с параметром
+    }
+
+    public void deleteProject() {
+        buttonDeleteProject.click();
+        buttonDeleteProject.click();
+    }
+
+
+
 
 }
