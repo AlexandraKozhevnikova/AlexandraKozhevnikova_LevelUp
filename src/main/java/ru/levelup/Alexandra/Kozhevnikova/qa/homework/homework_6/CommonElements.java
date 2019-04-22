@@ -12,13 +12,13 @@ import java.util.concurrent.TimeUnit;
 
 public abstract class CommonElements {
 
-    protected WebDriver driver;
+    protected  WebDriver driver;
 
     @FindBy(className = "user-info")
-    private WebElement userMenuUnit;
+    private static WebElement userMenuUnit;
 
     @FindBy(xpath = "//i[contains(@class, 'fa-sign-out')]/..")
-    private WebElement buttonLogout;
+    private static WebElement buttonLogout;
 
     @FindBy(xpath = "//ul[contains(@class, 'nav-list')]//li")
     private static List<WebElement> leftSlideMenu;
@@ -35,11 +35,11 @@ public abstract class CommonElements {
         PageFactory.initElements(driver, this);
     }
 
-    public void clickUserMenuUnit() {
+    public static void clickUserMenuUnit() {
         userMenuUnit.click();
     }
 
-    public void clickButtonLogout() {
+    public static void clickButtonLogout() {
         buttonLogout.click();
     }
 
@@ -60,6 +60,10 @@ public abstract class CommonElements {
             break;
             }
         }
+    }
+
+    public void closeBrowser() {
+        driver.quit();
     }
 
 

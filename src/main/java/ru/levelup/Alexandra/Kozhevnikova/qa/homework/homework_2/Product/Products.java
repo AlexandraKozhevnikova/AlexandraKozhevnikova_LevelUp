@@ -1,5 +1,6 @@
 package ru.levelup.Alexandra.Kozhevnikova.qa.homework.homework_2.Product;
 
+// TODO Как правило именна классов носят единственное число
 public  abstract class Products {
     private String name;
     private Origin origin;
