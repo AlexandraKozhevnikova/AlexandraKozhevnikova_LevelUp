@@ -38,10 +38,17 @@ public class ManageUserPage extends CommonInPage {
 
 
     @FindBy(xpath = "//td//a[contains(text(), 'KAS')]")
-    private WebElement stringProject;
+    private WebElement stringUser;
 
-    @FindBy(xpath = "//input[contains(text(), 'Delete')]")
+    @FindBy(xpath = "//input[contains(@value, 'Delete')]")
     private WebElement buttonDeleteUser;
+
+    @FindBy(id = "search")
+    private WebElement inputSearch;
+
+    @FindBy(xpath ="//input[@value ='Apply Filter']")
+    private WebElement buttonAplayFilter;
+
 
 
     public ManageUserPage(WebDriver driver) {
@@ -75,6 +82,14 @@ public class ManageUserPage extends CommonInPage {
     public void deleteUser() {
         buttonDeleteUser.click();
         buttonDeleteUser.click();
+    }
+
+    public void searchUser(Users user) {
+        inputSearch.sendKeys(getLoginData(user).getLogin());
+        buttonAplayFilter.click();
+        stringUser.click();
+
+
     }
 
 

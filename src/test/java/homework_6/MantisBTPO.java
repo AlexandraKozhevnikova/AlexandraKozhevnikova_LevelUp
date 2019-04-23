@@ -61,7 +61,8 @@ public class MantisBTPO {
         activitySteps.fillUserInformation(Users.REPORTER);
         activitySteps.clickCreateUserButtons();
 
-
+        activitySteps.loginNewUser(Users.REPORTER);
+        activitySteps.deleteUser(Users.REPORTER);
     }
 
 

@@ -11,6 +11,7 @@ import ru.levelup.Alexandra.Kozhevnikova.qa.homework.homework_6.service.Users;
 
 import static ru.levelup.Alexandra.Kozhevnikova.qa.homework.homework_6.CommonElements.*;
 import static ru.levelup.Alexandra.Kozhevnikova.qa.homework.homework_6.CommonElements.clickButtonLogout;
+import static ru.levelup.Alexandra.Kozhevnikova.qa.homework.homework_6.CommonInPage.logout;
 
 
 public class ActivitySteps {
@@ -87,21 +88,30 @@ public class ActivitySteps {
         manageProjectPage.deleteProject();
     }
 
-    @Step
+    @Step("Удалить созданного пользователя")
     public void deleteUser(Users user){
-        manageUserPage.deleteUser();
+        loginNewUser(Users.ADMINISTRATOR);
+        clickItemLeftSlideMenus(ItemsLeftSlideMenu.MANAGE);
+        clickItemNavTabss(ItemsNavTabs.MANAGE_USER);
+        manageUserPage.searchUser(Users.REPORTER);
         manageUserPage.deleteUser();
 
     }
 
     @Step("Разлогинится и закрыть браузер")
     public void logoutClose() {
-        clickUserMenuUnit();
-        clickButtonLogout();
+        logout();
         manageProjectPage.closeBrowser();
-
-
     }
+
+    @Step("Зайти под созданным пользователем: '{0}'")
+    public void loginNewUser(Users user){
+        logout();
+        goToLoginPage();
+        loginPage.loginAsUser(user);
+    }
+
+
 
 
 }

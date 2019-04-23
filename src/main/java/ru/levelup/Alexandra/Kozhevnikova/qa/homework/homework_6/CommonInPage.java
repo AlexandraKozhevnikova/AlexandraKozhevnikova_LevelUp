@@ -21,7 +21,7 @@ public abstract class CommonInPage extends CommonElements {
         driver.get(url);
     }
 
-    public void logout() {
+    public static void logout() {
     clickUserMenuUnit();
     clickButtonLogout();
     }
