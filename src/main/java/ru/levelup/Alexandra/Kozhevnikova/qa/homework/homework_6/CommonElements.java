@@ -10,6 +10,7 @@ import ru.levelup.Alexandra.Kozhevnikova.qa.homework.homework_6.service.ItemsNav
 import java.util.List;
 import java.util.concurrent.TimeUnit;
 
+// TODO  А для каких целей часть методов сделана static?
 public abstract class CommonElements {
 
     protected  WebDriver driver;
